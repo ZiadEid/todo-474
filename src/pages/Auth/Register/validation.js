@@ -4,7 +4,7 @@ const passwordRegex =
   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
 export const registerValidation = yup.object({
-  userName: yup.string().trim().required(),
+  username: yup.string().trim().required(),
   email: yup.string().email("Enter a valid email").trim().required("Required"),
   password: yup
     .string()
