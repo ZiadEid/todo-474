@@ -9,11 +9,10 @@ import toast from "react-hot-toast";
 
 export default function Login() {
   // Hooks
-  const { token, setToken, setUserData } = useContext(GlobalStore);
+  const { token, setToken, setUserData, base_url } = useContext(GlobalStore);
   const navigate = useNavigate();
 
   // Vars
-  const base_url = "http://localhost:1337/api";
   const endpoint = "auth/local";
 
   // Protected Route
@@ -29,7 +28,7 @@ export default function Login() {
       const res = await axios.post(`${base_url}/${endpoint}`, values);
 
       setToken(res.data.jwt);
-      setUserData(res.data.user)
+      setUserData(res.data.user);
 
       localStorage.setItem("token", res.data.jwt);
       localStorage.setItem("userData", JSON.stringify(res.data.user));

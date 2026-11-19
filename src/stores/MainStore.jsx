@@ -9,11 +9,15 @@ export default function MainStore({ children }) {
     JSON.parse(localStorage.getItem("userData")),
   );
 
+  // Vars
+  const base_url = "http://localhost:1337/api";
+
   const data = {
     token,
     setToken,
     userData,
     setUserData,
+    base_url
   };
   return <GlobalStore.Provider value={data}>{children}</GlobalStore.Provider>;
 }

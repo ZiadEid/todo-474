@@ -1,8 +1,13 @@
-import React from "react";
-
-export default function DeleteIcon() {
+export default function DeleteIcon({ documentId, handleClick }) {
   return (
-    <button className="group/child relative flex h-11 w-11 flex-col items-center justify-center overflow-hidden rounded-lg bg-[#dc3545] hover:bg-[#bb2d3b] cursor-pointer">
+    <button
+      onClick={() => {
+        if (typeof handleClick == "function") {
+          handleClick(documentId);
+        }
+      }}
+      className="group/child relative flex h-11 w-11 flex-col items-center justify-center overflow-hidden rounded-lg bg-[#dc3545] hover:bg-[#bb2d3b] cursor-pointer"
+    >
       <svg
         viewBox="0 0 1.625 1.625"
         className="absolute -top-7 fill-white delay-100 group-hover/child:top-4 group-hover/child:animate-[spin_1.4s] group-hover/child:duration-1000"

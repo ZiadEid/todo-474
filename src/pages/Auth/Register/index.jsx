@@ -9,7 +9,7 @@ import toast from "react-hot-toast";
 
 export default function Register() {
   // Hooks
-  const { token, setToken, setUserData } = useContext(GlobalStore);
+  const { token, setToken, setUserData, base_url } = useContext(GlobalStore);
   const navigate = useNavigate();
 
   // Protected Route
@@ -20,7 +20,6 @@ export default function Register() {
   }, []);
 
   // Vars
-  const base_url = "http://localhost:1337/api";
   const endpoint = "auth/local/register";
 
   // States
